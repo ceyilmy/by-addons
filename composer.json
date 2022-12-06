@@ -1,0 +1,36 @@
+{
+    "name": "bb-studio/by-addons",
+    "description": "The ThinkPHP6 Addons Package",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "BoyangLee",
+            "email": "1401211620@qq.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "think\\": "src/"
+        },
+        "files": [
+            "src/helper.php"
+        ]
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "think\\addons\\Service"
+            ],
+            "config":{
+                "addons": "src/config.php"
+            }
+        }
+    },
+    "scripts" : {
+        "post-install-cmd": [
+            "php think addons:config"
+        ]
+    }
+}
